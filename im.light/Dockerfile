@@ -11,9 +11,9 @@ RUN apt-get update && \
     find /usr/share/man -type f -delete
 
 ENV APP=QQLight \
-    AUDIO_GID=63 \
-    VIDEO_GID=39 \
-    GID=1000 \
+    AUDIO_GID=29 \
+    VIDEO_GID=44 \
+    GID=999 \
     UID=1000
 
 RUN groupadd -o -g $GID qq && \
