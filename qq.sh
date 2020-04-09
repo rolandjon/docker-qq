@@ -143,7 +143,7 @@ INSTANCE=""
 CLEAN=""
 UPDATE=""
 START=""
-tag="office"
+tag="latest"
 while [[ $# > 0 ]];do
   key="$1"
   case $key in
