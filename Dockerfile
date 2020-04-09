@@ -13,7 +13,7 @@ RUN apt-get update && \
 ENV APP=TIM \
     AUDIO_GID=29 \
     VIDEO_GID=44 \
-    GID=999 \
+    GID=1000 \
     UID=1000
 
 RUN groupadd -o -g $GID qq && \
