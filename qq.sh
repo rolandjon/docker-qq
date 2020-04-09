@@ -57,13 +57,13 @@ remove(){
 }
 removei(){
   clean
-  imgs=$(docker images | awk '$1 ~ /bestwu\/qq/ {print $3}')
+  imgs=$(docker images | awk '$1 ~ /rlandj\/docker-qq/ {print $3}')
   [[ -n $imgs ]] && docker rmi $imgs
   return 0
 }
 
 clean(){
-  container_ids=$(docker ps -a | awk  'NR!=1 && $2 ~ /bestwu\/qq/ {print $1}')
+  container_ids=$(docker ps -a | awk  'NR!=1 && $2 ~ /rlandj\/docker-qq/ {print $1}')
   if [[ -n "$container_ids" ]]; then
     docker container rm -f $container_ids
   fi
@@ -95,16 +95,16 @@ startContainer(){
     -e VIDEO_GID=`getent group video | cut -d: -f3` \
     -e GID=`id -g` \
     -e UID=`id -u` \
-    bestwu/qq:${tag}
+    rlandj/docker-qq:${tag}
   return 0
 }
 
 start(){
-  container_id=$(docker ps -a | grep script_qq | awk  '$2 ~ /bestwu\/qq/ {print $1}')
+  container_id=$(docker ps -a | grep script_qq | awk  '$2 ~ /rlandj\/docker-qq/ {print $1}')
   if [[ -z "$container_id" ]]; then
     startContainer
   else
-    container_stat=$(docker ps | grep script_qq | awk  '$2 ~ /bestwu\/qq/ {print $1}')
+    container_stat=$(docker ps | grep script_qq | awk  '$2 ~ /rlandj\/docker-qq/ {print $1}')
     if [ -z "$container_stat" ]; then
       docker container start ${container_id}
     else
