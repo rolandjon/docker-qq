@@ -19,7 +19,7 @@ install(){
     chmod +x ~/.local/bin/qq.sh
     ln -i ~/.local/bin/qq.sh ~/.local/bin/qq
     QQ_P=/home/$(whoami)/.local/bin/qq.sh
-    curl -L -H "Cache-Control: no-cache" https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/tim.png \
+    curl -L -H "Cache-Control: no-cache" https://raw.githubusercontent.com/rolandjon/docker-qq/master/tim.png \
     -o ~/.local/share/icons/hicolor/256x256/apps/WINE_TIM.png
     cat <<-EOF > /home/$(whoami)/.local/share/applications/TIM.desktop
 [Desktop Entry]
