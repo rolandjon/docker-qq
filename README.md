@@ -28,10 +28,10 @@
 
 ```bash
 $ getent group audio | cut -d: -f3
-63
+29
 ```
 
-这里取得的 `63` 就是 `audio` 组的组 ID，替换下面命令中对应的ID。
+这里取得的 `29` 就是 `audio` 组的组 ID，替换下面命令中对应的ID。
 
 获取 `video` 组 ID
 
@@ -62,7 +62,7 @@ services:
       - XMODIFIERS=@im=fcitx #中文输入
       - QT_IM_MODULE=fcitx
       - GTK_IM_MODULE=fcitx
-      - AUDIO_GID=63 # 可选 默认63（fedora） 主机audio gid 解决声音设备访问权限问题
+      - AUDIO_GID=29 # 可选 默认29（ubuntu 18.04） 主机audio gid 解决声音设备访问权限问题
       - GID=$GID # 可选 默认1000 主机当前用户 gid 解决挂载目录访问权限问题
       - UID=$UID # 可选 默认1000 主机当前用户 uid 解决挂载目录访问权限问题
 ```
