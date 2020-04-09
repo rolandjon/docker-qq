@@ -13,7 +13,7 @@ install(){
   if ! [ -x ~/.local/bin/qq.sh ]; then
     echo 'Install this script to ~/.local/bin/qq.sh' >&2
     #cp $0 ~/.local/bin/qq.sh
-    curl -L -H "Cache-Control: no-cache" https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/qq.sh \
+    curl -L -H "Cache-Control: no-cache" https://raw.githubusercontent.com/rolandjon/docker-qq/master/qq.sh \
     -o ~/.local/bin/qq.sh
     sed -i -r -e 's/^\s*remove.*install$/start/g' ~/.local/bin/qq.sh
     chmod +x ~/.local/bin/qq.sh
