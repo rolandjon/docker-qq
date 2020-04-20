@@ -20,9 +20,9 @@ RUN groupadd -o -g $GID qq && \
     groupmod -o -g $AUDIO_GID audio && \
     groupmod -o -g $VIDEO_GID video && \
     useradd -d "/home/qq" -m -o -u $UID -g qq -G audio,video qq && \
-    mkdir -p /home/software/Tencent/QQFiles && \
-    chown -R qq:qq /home/software/Tencent/QQFiles && \
-    ln -s "/home/software/Tencent/QQFiles" "/home/qq/Tencent Files" && \
+    mkdir  /TencentFiles && \
+    chown -R qq:qq /TencentFiles && \
+    ln -s "/TencentFiles" "/home/qq/Tencent Files" && \
     sed -i 's/TIM.exe" &/TIM.exe"/g' "/opt/deepinwine/tools/run.sh"
 
 VOLUME ["/QQFiles"]
